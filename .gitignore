@@ -18,3 +18,4 @@ data/*.json
 *.egg-info/
 .coverage
 benchmarks/tmp/
+data/*.joblib
