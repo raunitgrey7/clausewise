@@ -1,0 +1,397 @@
+{
+  "version": "0.1.0",
+  "seed": 42,
+  "corpus": {
+    "n_contracts": 400,
+    "n_train": 280,
+    "n_test": 120,
+    "n_clauses": 6809,
+    "sha256": "bddd71c615f3e41d70111ee826880449c8be6a700e79377d3f06a15edaf49a3f",
+    "types": {
+      "employment": 72,
+      "lease": 53,
+      "msa": 116,
+      "nda": 75,
+      "saas": 84
+    },
+    "planted_risks": {
+      "auto_renewal": 137,
+      "governing_law": 149,
+      "ip_assignment": 86,
+      "non_compete": 56,
+      "unilateral_termination": 94,
+      "unlimited_liability": 81
+    },
+    "n_noisy_test": 62
+  },
+  "environment": {
+    "python": "3.13.17",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "embeddings": "model2vec:minishlab/potion-base-8M"
+  },
+  "segmentation": {
+    "all": {
+      "precision": 1.0,
+      "recall": 0.9955,
+      "f1": 0.9977,
+      "tp": 1991,
+      "fp": 0,
+      "fn": 9
+    },
+    "clean": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 967,
+      "fp": 0,
+      "fn": 0
+    },
+    "noisy": {
+      "precision": 1.0,
+      "recall": 0.9913,
+      "f1": 0.9956,
+      "tp": 1024,
+      "fp": 0,
+      "fn": 9
+    },
+    "exact_span_rate": 0.991,
+    "n_gold_clauses": 2000
+  },
+  "classification": {
+    "n_train_clauses": 4809,
+    "n_test_clauses": 2000,
+    "n_labels": 37,
+    "macro_f1_heading_and_body": 1.0,
+    "accuracy_heading_and_body": 1.0,
+    "macro_f1_body_only": 1.0,
+    "accuracy_body_only": 1.0,
+    "macro_f1_rule_baseline": 0.9454,
+    "weakest_classes_body_only": [
+      [
+        "acceptable_use",
+        1.0
+      ],
+      [
+        "assignment",
+        1.0
+      ],
+      [
+        "benefits",
+        1.0
+      ],
+      [
+        "compensation",
+        1.0
+      ],
+      [
+        "confidentiality",
+        1.0
+      ]
+    ]
+  },
+  "entities": {
+    "date": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 120,
+      "fp": 0,
+      "fn": 0
+    },
+    "duration": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 871,
+      "fp": 0,
+      "fn": 0
+    },
+    "jurisdiction": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 120,
+      "fp": 0,
+      "fn": 0
+    },
+    "money": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 155,
+      "fp": 0,
+      "fn": 0
+    },
+    "party": {
+      "precision": 1.0,
+      "recall": 0.9958,
+      "f1": 0.9979,
+      "tp": 478,
+      "fp": 0,
+      "fn": 2
+    },
+    "percentage": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 95,
+      "fp": 0,
+      "fn": 0
+    },
+    "all": {
+      "precision": 1.0,
+      "recall": 0.9989,
+      "f1": 0.9995,
+      "tp": 1839,
+      "fp": 0,
+      "fn": 2
+    }
+  },
+  "risk": {
+    "gold_segments": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 195,
+      "fp": 0,
+      "fn": 0
+    },
+    "per_type_gold_segments": {
+      "auto_renewal": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 36,
+        "fp": 0,
+        "fn": 0
+      },
+      "governing_law": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 55,
+        "fp": 0,
+        "fn": 0
+      },
+      "ip_assignment": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 32,
+        "fp": 0,
+        "fn": 0
+      },
+      "non_compete": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 19,
+        "fp": 0,
+        "fn": 0
+      },
+      "unilateral_termination": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 32,
+        "fp": 0,
+        "fn": 0
+      },
+      "unlimited_liability": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 21,
+        "fp": 0,
+        "fn": 0
+      }
+    },
+    "end_to_end": {
+      "all": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 195,
+        "fp": 0,
+        "fn": 0
+      },
+      "clean": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 93,
+        "fp": 0,
+        "fn": 0
+      },
+      "noisy": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 102,
+        "fp": 0,
+        "fn": 0
+      }
+    },
+    "n_planted": 195
+  },
+  "redlines": {
+    "n_redlines": 195,
+    "resolved_rate": 1.0
+  },
+  "contract_type": {
+    "accuracy": 1.0,
+    "n": 120
+  },
+  "retrieval": {
+    "bm25": {
+      "backend": "bm25",
+      "recall_at_1": 0.6083,
+      "recall_at_5": 0.8177,
+      "mrr": 0.7099,
+      "n_questions": 960
+    },
+    "tfidf": {
+      "backend": "tfidf",
+      "recall_at_1": 0.6146,
+      "recall_at_5": 0.8177,
+      "mrr": 0.713,
+      "n_questions": 960
+    },
+    "hybrid_bm25_tfidf": {
+      "backend": "bm25+tfidf",
+      "recall_at_1": 0.6083,
+      "recall_at_5": 0.8177,
+      "mrr": 0.7097,
+      "n_questions": 960
+    },
+    "dense": {
+      "backend": "dense",
+      "recall_at_1": 0.6813,
+      "recall_at_5": 0.8833,
+      "mrr": 0.773,
+      "n_questions": 960
+    },
+    "hybrid_bm25_dense": {
+      "backend": "bm25+dense",
+      "recall_at_1": 0.6615,
+      "recall_at_5": 0.9146,
+      "mrr": 0.7689,
+      "n_questions": 960
+    },
+    "dense_backend": "model2vec:minishlab/potion-base-8M"
+  },
+  "qa": {
+    "hybrid": {
+      "backend": "bm25+dense",
+      "n_questions": 1080,
+      "answered_rate": 0.9563,
+      "citation_validity": 1.0,
+      "citation_accuracy": 0.9052,
+      "exact_match_value_questions": 0.9378,
+      "exact_match_by_type": {
+        "boolean": {
+          "em": 0.9712,
+          "n": 104
+        },
+        "date": {
+          "em": 1.0,
+          "n": 65
+        },
+        "duration": {
+          "em": 0.8632,
+          "n": 212
+        },
+        "jurisdiction": {
+          "em": 1.0,
+          "n": 64
+        },
+        "money": {
+          "em": 1.0,
+          "n": 58
+        },
+        "money_or_fees": {
+          "em": 0.6667,
+          "n": 15
+        },
+        "parties": {
+          "em": 1.0,
+          "n": 71
+        },
+        "percentage": {
+          "em": 1.0,
+          "n": 6
+        }
+      },
+      "abstention_on_unanswerable": 0.5833,
+      "n_unanswerable": 120
+    },
+    "bm25": {
+      "backend": "bm25",
+      "n_questions": 1080,
+      "answered_rate": 0.951,
+      "citation_validity": 1.0,
+      "citation_accuracy": 0.8817,
+      "exact_match_value_questions": 0.9257,
+      "exact_match_by_type": {
+        "boolean": {
+          "em": 0.9615,
+          "n": 104
+        },
+        "date": {
+          "em": 1.0,
+          "n": 65
+        },
+        "duration": {
+          "em": 0.8349,
+          "n": 212
+        },
+        "jurisdiction": {
+          "em": 1.0,
+          "n": 62
+        },
+        "money": {
+          "em": 1.0,
+          "n": 57
+        },
+        "money_or_fees": {
+          "em": 0.6667,
+          "n": 15
+        },
+        "parties": {
+          "em": 1.0,
+          "n": 71
+        },
+        "percentage": {
+          "em": 1.0,
+          "n": 6
+        }
+      },
+      "abstention_on_unanswerable": 0.5833,
+      "n_unanswerable": 120
+    }
+  },
+  "grounding_checker": {
+    "n_positive": 3271,
+    "accept_rate_verbatim": 1.0,
+    "n_negative": 10039,
+    "reject_rate_all_perturbations": 0.9811,
+    "reject_rate_by_kind": {
+      "fabricated": 1.0,
+      "negation_inserted": 0.9447,
+      "negation_removed": 0.8774,
+      "number_swap": 0.9674,
+      "other_clause": 0.9994
+    }
+  },
+  "timings_seconds": {
+    "corpus": 0.032,
+    "segmentation": 0.175,
+    "classification": 2.25,
+    "entities": 0.108,
+    "risk": 0.586,
+    "redlines": 0.325,
+    "retrieval": 0.917,
+    "qa": 51.774,
+    "grounding": 0.77
+  }
+}

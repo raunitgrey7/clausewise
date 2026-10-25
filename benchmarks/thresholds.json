@@ -1,0 +1,20 @@
+{
+  "segmentation.all.f1": 0.98,
+  "segmentation.exact_span_rate": 0.97,
+  "classification.macro_f1_heading_and_body": 0.97,
+  "classification.macro_f1_body_only": 0.95,
+  "entities.all.f1": 0.98,
+  "risk.gold_segments.precision": 0.97,
+  "risk.gold_segments.recall": 0.95,
+  "risk.end_to_end.all.recall": 0.93,
+  "redlines.resolved_rate": 0.99,
+  "contract_type.accuracy": 0.97,
+  "retrieval.bm25.recall_at_5": 0.78,
+  "retrieval.hybrid_bm25_tfidf.recall_at_5": 0.78,
+  "qa.hybrid.citation_validity": 0.99,
+  "qa.hybrid.citation_accuracy": 0.85,
+  "qa.hybrid.exact_match_value_questions": 0.88,
+  "qa.hybrid.abstention_on_unanswerable": 0.5,
+  "grounding_checker.accept_rate_verbatim": 0.99,
+  "grounding_checker.reject_rate_all_perturbations": 0.95
+}
