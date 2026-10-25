@@ -1,7 +1,7 @@
 # REPORT
 
 What was built, how every number was measured, and what is still missing. All commands were run from
-a local checkout on macOS (Apple Silicon, CPU only) with Python 3.13.17 via uv,
+the repository root on macOS (Apple Silicon, CPU only) with Python 3.13.17 via uv,
 seed 42, on 2026-10-25.
 
 ## What was built
