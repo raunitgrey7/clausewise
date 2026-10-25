@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>clausewise</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo">cw</span><div><h1>clausewise</h1><p class="sub">Contract intelligence: clauses, risks, redlines, grounded answers</p></div></div>
+  <div class="status" id="status">loading</div>
+</header>
+<main class="layout">
+  <section class="panel input">
+    <div class="row">
+      <label for="sample">Sample contract</label>
+      <select id="sample"><option value="">paste your own</option></select>
+      <button id="analyze" class="primary">Analyze</button>
+    </div>
+    <textarea id="text" spellcheck="false" placeholder="Paste a contract here (NDA, MSA, SaaS, employment, lease) and press Analyze."></textarea>
+    <p class="hint" id="hint">Nothing leaves this machine. Analysis is deterministic: rules, a linear classifier and local retrieval.</p>
+  </section>
+  <section class="panel results" id="results" hidden>
+    <div class="summary">
+      <div class="score"><div class="ring" id="ring"><span id="score">0</span></div><div class="score-label">risk score</div></div>
+      <div class="summary-text">
+        <div class="pill-row"><span class="pill" id="ctype">type</span><span class="pill muted" id="nclauses">0 clauses</span><span class="pill muted" id="nrisks">0 findings</span></div>
+        <p id="summary"></p>
+      </div>
+    </div>
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-tab="risks">Risks</button>
+      <button class="tab" data-tab="clauses">Clauses</button>
+      <button class="tab" data-tab="entities">Entities</button>
+      <button class="tab" data-tab="ask">Ask</button>
+    </nav>
+    <div class="tabpanel" id="tab-risks"></div>
+    <div class="tabpanel" id="tab-clauses" hidden></div>
+    <div class="tabpanel" id="tab-entities" hidden></div>
+    <div class="tabpanel" id="tab-ask" hidden>
+      <div class="row">
+        <input id="question" type="text" placeholder="Which law governs this agreement? How much notice is needed to terminate?">
+        <select id="mode"><option value="hybrid">hybrid</option><option value="bm25">bm25</option><option value="dense">dense</option><option value="tfidf">tfidf</option></select>
+        <button id="askbtn" class="primary">Ask</button>
+      </div>
+      <div class="chips" id="suggested"></div>
+      <div id="answer"></div>
+    </div>
+  </section>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>
