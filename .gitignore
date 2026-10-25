@@ -1,0 +1,20 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# clausewise
+data/*.jsonl.gz
+data/*.json
+.pytest_cache/
+.hypothesis/
+.ruff_cache/
+*.egg-info/
+.coverage
+benchmarks/tmp/

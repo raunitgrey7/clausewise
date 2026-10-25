@@ -1,0 +1,9 @@
+.venv
+.git
+data/*.jsonl.gz
+data/*.joblib
+.pytest_cache
+.ruff_cache
+.hypothesis
+benchmarks/tmp
+__pycache__

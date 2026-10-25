@@ -1,0 +1,56 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+env:
+  CLAUSEWISE_EMBEDDINGS: auto
+  HF_HUB_DISABLE_TELEMETRY: "1"
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - name: Install
+        run: uv sync --all-extras
+      - name: Lint
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
+          uv run python scripts/check_quality.py
+      - name: Tests
+        run: uv run pytest -q
+      - name: Cache embedding model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-potion-base-8m-v1
+      - name: Benchmark gate
+        run: uv run python -m clausewise.bench --out benchmarks/ci --check benchmarks/thresholds.json
+      - name: README numbers match committed results
+        run: uv run python scripts/check_readme_numbers.py
+      - name: Upload benchmark output
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-results
+          path: benchmarks/ci/
+  docker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t clausewise:ci .
+      - name: Smoke test container
+        run: |
+          docker run -d --rm -p 8000:8000 --name cw clausewise:ci
+          for i in $(seq 1 30); do curl -fs http://localhost:8000/health && break; sleep 2; done
+          curl -fs http://localhost:8000/health
+          docker stop cw
