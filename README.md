@@ -1,5 +1,8 @@
 # clausewise
 
+[![ci](https://github.com/raunitgrey7/clausewise/actions/workflows/ci.yml/badge.svg)](https://github.com/raunitgrey7/clausewise/actions/workflows/ci.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Contract intelligence that works offline and explains itself. Paste an NDA, MSA, SaaS, employment or
 lease agreement and clausewise segments it into clauses, labels each clause, extracts the parties,
 dates, amounts, durations and governing law, scores the document against a risk playbook with the exact

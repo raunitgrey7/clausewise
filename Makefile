@@ -27,7 +27,7 @@ bench-check:
 	$(UV) run python -m clausewise.bench --out $(BENCH_DIR) --check benchmarks/thresholds.json
 
 serve:
-	$(UV) run clausewise serve --host 0.0.0.0 --port 8000
+	$(UV) run clausewise serve --host 127.0.0.1 --port 8000
 
 docker-build:
 	docker build -t clausewise:latest .

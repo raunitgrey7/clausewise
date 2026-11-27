@@ -252,7 +252,7 @@ def create_app(settings: Settings | None = None, analyzer: Analyzer | None = Non
     return app
 
 
-def run(host: str = "0.0.0.0", port: int = 8000) -> None:
+def run(host: str = "127.0.0.1", port: int = 8000) -> None:
     """Start uvicorn with the default settings."""
     import uvicorn
 

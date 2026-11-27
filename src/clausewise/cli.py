@@ -104,7 +104,7 @@ def build_parser() -> argparse.ArgumentParser:
     bench.add_argument("--check", type=Path, default=None)
     bench.set_defaults(func=_cmd_bench)
     serve = sub.add_parser("serve", help="start the API and dashboard")
-    serve.add_argument("--host", default="0.0.0.0")
+    serve.add_argument("--host", default="127.0.0.1")
     serve.add_argument("--port", type=int, default=8000)
     serve.set_defaults(func=_cmd_serve)
     pre = sub.add_parser("prefetch-embeddings", help="download the embedding model once (or report the fallback)")
